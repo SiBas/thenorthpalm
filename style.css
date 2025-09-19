@@ -156,3 +156,172 @@ footer {
   background: #1c1c1c;
   a:
 }
+
+.video {
+  padding: 60px;
+  background: #0b0c10;
+  text-align: center;
+}
+
+.video-slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.video-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.video-item {
+  min-width: 250px;
+  margin: 0 10px;
+  background: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.video-item img {
+  width: 100%;
+  display: block;
+}
+
+.video-item p {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.slide-btn.prev { left: -20px; }
+.slide-btn.next { right: -20px; }
+
+.see-all {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.see-all:hover {
+  background: white;
+  color: #000;
+}
+
+/* Navigation buttons */
+.video-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;      /* icon putih */
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.video-slider button:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.video-slider .prev {
+  left: 10px;
+}
+
+.video-slider .next {
+  right: 10px;
+}
+
+/* Featured Video */
+.featured-video {
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;   /* latar belakang hitam biar fokus ke video */
+  color: #fff;
+}
+
+.featured-video h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.video-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* supaya tetap rapi kalau di layar kecil */
+}
+
+.video-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 225px;
+  border-radius: 10px;
+}
+
+.see-all-videos {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.see-all-videos:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Featured Video */
+
+
+/* Footer Styles */
+.site-footer {
+  background-color: #111;   /* warna latar gelap */
+  text-align: center;
+  padding: 20px 0;
+  font-weight: bold;        /* font tebal */
+  color: #fff;              /* teks putih */
+}
+
+.site-footer a {
+  color: #fff;              /* link juga putih */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-footer a:hover {
+  color: #1db954;           /* efek hover Spotify green (optional) */
+}
