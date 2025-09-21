@@ -1,141 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The North Palm</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <!-- HEADER -->
   <header>
     <div class="logo">THE NORTH PALM</div>
-    <nav>
+
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-soundcloud"></i></a>
+    </div>
+
+    <nav id="navbar">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="socials">
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-youtube"></i>
-      <i class="fab fa-soundcloud"></i>
+
+    <!-- Hamburger -->
+    <div id="menu-toggle" class="menu-toggle">
+      <i class="fas fa-bars"></i>
     </div>
   </header>
 
-  <section class="hero">
-    <img src="assets/img/THE-NORTH-PALM-2.jpg" alt="The North Palm Band">
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <img src="assets/img/THE-NORTH-PALM-2.jpg" alt="The North Palm" />
     <div class="hero-text">
       <h1>THE NORTH PALM</h1>
       <p>Post Punk</p>
     </div>
   </section>
 
-  <section class="about">
+  <!-- ABOUT -->
+  <section id="about" class="about">
     <div class="about-text">
-      <h2>ABOUT THE NORTH PALM</h2>
-      <p>Formed in May 2010, Four kids from Northpalm street (west-Jakarta) try to find another music in another way in style and color. Mix all genres of music who came from many bands from the U.K.</p>
+      <h2>About Us</h2>
       <p>
-        DISCOGRAPHY : It was formed in 2010, because all the big personnel are in the same neighborhood, and have the same interest in music. 
-        The North Palm is taken from the name of their residence area "North Palmerah". 
-        Starting from the saturated music that developed in West Jakarta, which is not far from the music Punk, Hardcore, Melodic, and Metal, then they try something new, try to play what music they like into the material of the song they make. 
-        They are "Guen (Lead Guitar)", L (Drum), Phiuz (Bass), and Phebrown (Vocal, Rythm). 
-        Trying to give a new nuance to the realm of Indie Music Indonesia. 
+        The North Palm brings post-punk vibes with a modern edge.
+        Our music is a journey between raw emotions and powerful live energy.
       </p>
     </div>
     <div class="about-img">
-      <img src="assets/img/Logo The North Palm - Putih 800x500.webp" alt="Band Playing">
+      <img src="assets/img/Logo The North Palm - Putih 800x500.webp" alt="About The North Palm" />
     </div>
   </section>
 
-  <!-- Featured Video Section -->
-  <section class="featured-video">
-    <h2>Featured Video</h2>
+  <!-- VIDEOS -->
+  <section id="videos" class="featured-video">
+    <h2>Featured Videos</h2>
     <div class="video-grid">
-      <!-- Video 1: Ganti VIDEO_ID_1 dengan ID asli -->
       <div class="video-card">
-        <iframe 
-          src="https://www.youtube.com/embed/-ku0nS68My8" 
-          title="SURA — The North Palm"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
       </div>
-      
-      <!-- Video 2 -->
       <div class="video-card">
-        <iframe 
-          src="https://www.youtube.com/embed/xIK7seHttJY" 
-          title="THE NORTH PALM - MANTRA [Official Music Video]"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
       </div>
-
-      <!-- Video 3 -->
       <div class="video-card">
-        <iframe 
-          src="https://www.youtube.com/embed//o6vrI1f4Mpc" 
-          title="Tahta Baru"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-
-    <a href="https://www.youtube.com/@thenorthpalmofficial1372/videos" 
-      class="see-all-videos" target="_blank">
-      See All Videos
-    </a>
   </section>
 
-
-
-
-  <section class="news">
+  <!-- NEWS -->
+  <section id="news" class="news">
     <h2>Latest News</h2>
     <div class="news-cards">
       <div class="card">
-        <img src="assets/img/Mantra2.jpg" alt="News 1">
-        <h3>Mantra</h3>
-        <p>Mantra yang ampuh dan seringkali menjadi senjata andalan penguasa menghadapi rakyat yang ditakutinya. Mantra itu berbunyi "bim salabim, abrakadabra, Menghilanglah!" Lalu rakyat seperti Wiji Thukul, Petrus Bima, Herman Hendrawan dan lainnya lenyap dan senyap begitu saja. Menghilang, dihilangkan oleh mantra kekuasaan.
-
-          Di Indonesia sendiri, kasus penghilangan orang secara paksa terjadi di beberapa daerah selama kurun waktu pemerintahan militeristik Orde Baru dan bahkan terjadi ketika masa reformasi. Sangat disayangkan, semua peristiwa tersebut tidak ada penyelesaian yang adil hingga detik ini. Para korban yang dihilangkan tidak dikembalikan, kebenaran tidak diungkap, dan akuntabilitas keadilan masih terus diingkari negara.
-
-          Hari ini bertepatan dengan Hari Anti Penghilangan Paksa Internasional, @thenorthpalm merilis single “Mantra” sebagai bentuk solidaritas kepada para korban penghilangan paksa dan sebagai bentuk penentangan terhadap tindak penghilangan atau perampasan atas hak hidup.
-
-          “Mantra” sudah bisa kalian simak di berbagai platform musi digital dan diunduh di https://thenorthpalm.bandcamp.com</p>
+        <img src="assets/img/Mantra.jpg" alt="News 1" />
+        <h3>New Single Out</h3>
+        <p>Our latest single "SURA" is available on all platforms now.</p>
       </div>
       <div class="card">
-        <img src="assets/img/N.O Romantic.jpeg" alt="News 2">
-        <h3>N.O Romantic</h3>
-        <p>Spesialnya single ini digodok lebih detail lagi oleh Fandy DFMC (Agrikultur, Kripik Peudeus) sebagai music directornya. Fandy mungkin di lagu ini terinspirasi oleh band disko-punk “!!!” dari NYC, dan The North Palm di lagu ini terinspirasi dari “The Wild Swan” band new wave Liverpool. Akhirnya sinergi antara keduanya bertemu di “N.O Romantic”.
-
-        The North Palm : Gatot, Gun, Silvester
-        Musik/Arrangement : The North Palm, Fandy DFMC
-        Lyric : Silvester
-        Music Director : Fandy DFMC
-        Recording at: PHOUSE
-        Producer: Danu Saputra
-        Digital release: Joni Jengkri
-        Artwork : Pictotherapy
-        Photo: Bagas</p>
+        <img src="assets/img/N.O Romantic.jpeg" alt="News 2" />
+        <h3>Upcoming Tour</h3>
+        <p>We’re hitting the road for a series of shows across the country.</p>
       </div>
+      <!-- <div class="card">
+        <img src="assets/news3.jpg" alt="News 3" />
+        <h3>Behind the Scenes</h3>
+        <p>Take a look inside our studio process and daily band life.</p>
+      </div> -->
     </div>
   </section>
 
-  <section class="music">
+    <section class="music">
     <h2>Latest Tracks</h2>
     <iframe 
       data-testid="embed-iframe" style="border-radius:12px" 
@@ -156,7 +121,8 @@
       src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A285373736&color=%23ff5500&"></iframe>
   </section>
 
-  <section class="gallery">
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
       <img src="assets/img/ORANGE POP (06.08.2022) 800x500.jpg" alt="">
@@ -165,14 +131,15 @@
       <img src="assets/img/IMG_0527 800x500.jpg" alt="">
       <img src="assets/img/IMG_6174 800x500.jpg" alt="">
       <img src="assets/img/resize_TNP_NEWS_1.jpeg" alt="">
-      <!-- <img src="assets/img/gallery7.jpg" alt="">
-      <img src="assets/img/gallery8.jpg" alt="">
-      <img src="assets/img/gallery9.jpg" alt=""> -->
     </div>
   </section>
 
   <!-- Footer Section -->
-<footer class="site-footer">
-  <p>© Copyright 2025 The North Palm. All rights reserved.</p>
-  <p>Design By <a href="https://sibasmovic.com" target="_blank">sibasmovic</a></p>
-</footer>
+  <footer class="site-footer">
+    <p>© Copyright 2025 The North Palm. All rights reserved.</p>
+    <p>Design By <a href="https://sibasmovic.com" target="_blank">sibasmovic</a></p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

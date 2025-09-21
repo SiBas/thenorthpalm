@@ -1,23 +1,8 @@
-// Featured Video Slider New
-const wrapper = document.querySelector('.video-wrapper');
-const slides = document.querySelectorAll('.video-slide');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
 
-let index = 0;
-
-function showSlide(i) {
-  if (i >= slides.length) index = 0;
-  if (i < 0) index = slides.length - 1;
-  wrapper.style.transform = `translateX(${-index * 100}%)`;
+if (menuToggle && navbar) {
+  menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
 }
-
-nextBtn.addEventListener('click', () => {
-  index++;
-  showSlide(index);
-});
-
-prevBtn.addEventListener('click', () => {
-  index--;
-  showSlide(index);
-});
