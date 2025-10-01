@@ -90,12 +90,57 @@ nav a { color: #fff; font-weight: 600; }
 }
 .hero-text h1 { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; }
 .hero-text p { font-size: clamp(1rem, 3vw, 1.2rem); }
-
 /* ABOUT */
-.about { display: flex; align-items: center; gap: 40px; padding: 90px 20px; }
-.about-text { flex: 1; }
-.about-text h2 { text-align: center; margin-bottom: 20px; }
-.about-img img { width: 100%; border-radius: 10px; }
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 200px 20px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.about-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.about-logo img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .about-logo img {
+    max-width: 60%;
+    margin-top: 20px;
+  }
+}
+
 
 /* VIDEOS */
 .featured-video { padding: 40px 20px; text-align: center; }
@@ -207,7 +252,7 @@ nav a { color: #fff; font-weight: 600; }
 .gallery h2 { margin-bottom: 20px; }
 .gallery-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  grid-template-columns: repeat(5, minmax(150px, 1fr)); 
   gap: 10px; 
 }
 .gallery-grid img { width: 100%; border-radius: 6px; }
@@ -235,59 +280,45 @@ nav a { color: #fff; font-weight: 600; }
 /* RESPONSIVE ADJUSTMENTS */
 /* ============================= */
 /* Untuk tablet dan mobile */
-@media (max-width: 991px) {
-  /* Sesuaikan margin-top hero untuk mobile agar tidak tercrop */
-  .hero {
-    margin-top: 70px; /* Sesuaikan dengan tinggi header mobile */
-  }
-
-  #header .container {
-    flex-wrap: wrap; /* Izinkan item header untuk wrap */
-  }
-
-  #header .logo {
-    font-size: 24px; /* Ukuran logo lebih kecil di mobile */
-  }
-
-  .navbar {
-    width: 100%; /* Navbar mengambil lebar penuh saat mobile */
-  }
-
-  /* Sembunyikan menu desktop dan tampilkan hamburger */
-  .navbar ul {
-    display: none;
-  }
-
-  /* Tampilkan menu mobile saat aktif */
-  .navbar-mobile ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .navbar-mobile a {
-    width: 100%; /* Link mengambil lebar penuh */
-  }
-
+/* TABLET RESPONSIVE */
+@media (max-width: 1024px) and (min-width: 769px) {
   .about {
-    flex-direction: column;
-    padding: 30px 20px;
+    flex-direction: row;
+    gap: 20px;
     text-align: center;
   }
 
-  .about-text, .about-img {
-    flex: none; /* Hapus flex basis agar tidak ada pembagian ruang yang kaku */
-    width: 100%;
+  .about-text h2 {
+    text-align: center;
   }
 
-  .video-grid, .news-cards, .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Kolom lebih sedikit atau lebih kecil */
-  }
-
-  .gallery-grid img {
-    height: 120px; /* Tinggi gambar galeri lebih kecil di mobile */
+  .about-logo img {
+    max-width: 70%;
+    height: auto; /* menjaga proporsi */
+    object-fit: contain;
+    margin: 0 auto;
   }
 }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .about-logo img {
+    max-width: 100%;
+    height: auto; /* tetap proporsional */
+    object-fit: contain;
+    margin-top: 20px;
+  }
+}
+
 
 /* Untuk mobile kecil */
 @media (max-width: 480px) {
