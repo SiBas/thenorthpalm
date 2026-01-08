@@ -1,0 +1,276 @@
+<!-- ADVANCED GALLERY – MASONRY + ALBUM + LOAD MORE -->
+<!-- Disesuaikan dengan style thenorthpalm.vercel.app (dark, minimal, bold) -->
+<!-- FILE: gallery.html -->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<header>
+    <div class="logo">THE NORTH PALM</div>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/thenorthpalm/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/thenorthpalm/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@thenorthpalmofficial1372/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://soundcloud.com/thenorthpalm" target="_blank"><i class="fab fa-soundcloud"></i></a>
+      <a href="https://music.apple.com/us/artist/the-north-palm/1245611151" target="_blank"><i class="fab fa-apple"></i></a>
+    </div>
+
+    <nav id="navbar">
+      <ul>
+        <li><a href="https://thenorthpalm.vercel.app/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="https://wa.me/6281818972010?text=Halo%2C%20saya%20tertarik%20untuk%20kerjasama%20bisnis%20dengan%20Band%20The%20North%20Palm." target="_blank">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger -->
+    <div id="menu-toggle" class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/img/logo_TNP_64x64.png">
+    <title>Gallery | The North Palm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+        --bg: #0b0b0b;
+        --fg: #ffffff;
+        --muted: #9a9a9a;
+        --border: #222;
+        }
+
+        body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+        max-width: 1400px;
+        margin: auto;
+        padding: 10px 20px;
+        }
+
+        h1 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 6px;
+        }
+
+        .subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 50px;
+        }
+
+        /* ===== ALBUM TABS ===== */
+        .album-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        }
+
+        .album-tabs button {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        padding: 10px 22px;
+        border-radius: 30px;
+        cursor: pointer;
+        letter-spacing: 1px;
+        }
+
+        .album-tabs button.active,
+        .album-tabs button:hover {
+        background: white;
+        color: black;
+        }
+
+        /* ===== MASONRY ===== */
+        .masonry {
+        column-count: 4;
+        column-gap: 20px;
+        }
+
+        @media (max-width: 1200px) { .masonry { column-count: 3; } }
+        @media (max-width: 800px) { .masonry { column-count: 2; } }
+        @media (max-width: 500px) { .masonry { column-count: 1; } }
+
+        .item {
+        break-inside: avoid;
+        margin-bottom: 20px;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        }
+
+        .item img {
+        width: 100%;
+        display: block;
+        transition: transform .4s ease;
+        }
+
+        .item:hover img { transform: scale(1.06); }
+
+        .item span {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        padding: 16px;
+        font-size: 14px;
+        background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+        }
+
+        /* ===== LOAD MORE ===== */
+        .load-more {
+        display: block;
+        margin: 60px auto 0;
+        padding: 14px 36px;
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--fg);
+        border-radius: 40px;
+        cursor: pointer;
+        }
+
+        .load-more:hover {
+        background: white;
+        color: black;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.92);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+        max-width: 92%;
+        max-height: 92%;
+        border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="container">
+        <h1>Gallery</h1>
+        <p class="subtitle">Live Shows, Studio Sessions & Behind The Scenes</p>
+
+        <!-- ALBUM -->
+        <div class="album-tabs">
+            <button class="active" data-album="all">ALL</button>
+            <button data-album="live-2025">LIVE 2025</button>
+            <button data-album="live-2024">LIVE 2024</button>
+            <button data-album="live-2023">LIVE 2023</button>
+            <button data-album="live-2022">LIVE 2022</button>
+            <button data-album="studio">STUDIO</button>
+            <button data-album="bts">BTS</button>
+        </div>
+
+        <!-- MASONRY GRID -->
+        <div class="masonry" id="gallery"></div>
+
+        <button class="load-more" id="loadMore">LOAD MORE</button>
+        </div>
+
+        <div class="lightbox" id="lightbox"><img></div>
+
+    <script>
+        const photos = [
+        {src:'assets/gallery/IMG_1067_800x500.jpg', album:'live-2025', title:'Live Crowd'},
+        {src:'assets/gallery/IMG_9785_800x500.jpg', album:'live-2025', title:'Partai Indah 2025'},
+        {src:'assets/gallery/Treehaus_Kemang_27.10.2024_800x500.jpg', album:'live-2024', title:'Damn Rock Club 2024'},
+        {src:'assets/gallery/IMG_8959_800x500.jpg', album:'live-2024', title:'Doo be back (Despro Mercu 2005-2023) 2024'},
+        {src:'assets/gallery/IMG_8947_800x500.jpg', album:'live-2024', title:'Doo be back (Despro Mercu 2005-2023) 2024'},
+        {src:'assets/gallery/IMG_8968.jpg', album:'live-2024', title:'Doo be back (Despro Mercu 2005-2023) 2024'},
+        {src:'assets/gallery/IMG_8971.jpg', album:'live-2024', title:'Doo be back (Despro Mercu 2005-2023) 2024'},
+        {src:'assets/gallery/IMG_8953.jpg', album:'live-2024', title:'Doo be back (Despro Mercu 2005-2023) 2024'},
+        {src:'assets/gallery/IMG_8952.jpg', album:'live-2024', title:'Doo be back (Despro Mercu 2005-2023) 2024'},
+        {src:'assets/gallery/IMG_0527_800x500.jpg', album:'live-2023', title:'Dekat Di Beranda 2023'},
+        {src:'assets/gallery/ORANGE_POP_(06.08.2022)_800x500.jpg', album:'live-2022', title:'Orange Pop Vol.3 2023'},
+        {src:'assets/gallery/IMG_1088_800x500.jpg', album:'studio', title:'Studio Session'},
+        {src:'assets/gallery/IMG_1109_800x500.jpg', album:'bts', title:'Behind The Scene'},
+        // tambah data foto di sini
+        ];
+
+        let currentAlbum = 'all';
+        let visible = 8;
+        const gallery = document.getElementById('gallery');
+
+        function render() {
+        gallery.innerHTML = '';
+        const filtered = currentAlbum === 'all'
+            ? photos
+            : photos.filter(p => p.album === currentAlbum);
+
+        filtered.slice(0, visible).forEach(p => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = `<img src="${p.src}"><span>${p.title}</span>`;
+            div.onclick = () => openLightbox(p.src);
+            gallery.appendChild(div);
+        });
+        }
+
+        // Album switch
+        const tabs = document.querySelectorAll('.album-tabs button');
+        tabs.forEach(btn => {
+        btn.onclick = () => {
+            tabs.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentAlbum = btn.dataset.album;
+            visible = 8;
+            render();
+        }
+        });
+
+        // Load more
+        document.getElementById('loadMore').onclick = () => {
+        visible += 6;
+        render();
+        };
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = lightbox.querySelector('img');
+        function openLightbox(src) {
+        lbImg.src = src;
+        lightbox.classList.add('active');
+        }
+        lightbox.onclick = () => lightbox.classList.remove('active');
+
+        render();
+    </script>
+    
+    <footer class="site-footer">
+    <p>© Copyright 2026 The North Palm. All rights reserved.</p>
+    <p>
+        Manage By
+        <a href="https://www.instagram.com/bagasadesetyo_/" target="_blank" rel="noopener">
+        sibasmovic
+        </a>
+    </p>
+    </footer>
+
+</body>
+</html>
