@@ -7,6 +7,8 @@ if (menuToggle && navbar) {
   });
 }
 
+if (document.getElementById('loadMore')) {
+
 photos.push({
   src: 'assets/gallery/IMG_1033_800x500.jpg',
   album: 'live-2024',
@@ -25,45 +27,11 @@ photos.push({
   title: 'Encore Moment'
 });
 
+const gallery = document.getElementById('gallery');
+const tabs = document.querySelectorAll('.album-tabs button');
+const loadMoreBtn = document.getElementById('loadMore');
 let currentAlbum = 'all';
 let visible = 8;
-
-function render() {
-  gallery.innerHTML = '';
-
-  const filtered =
-    currentAlbum === 'all'
-      ? photos
-      : photos.filter(p => p.album === currentAlbum);
-
-  filtered.slice(0, visible).forEach(p => {
-    const div = document.createElement('div');
-    div.className = 'item';
-    div.innerHTML = `
-      <img src="${p.src}" alt="">
-      <span>${p.title}</span>
-    `;
-    div.onclick = () => openLightbox(p.src);
-    gallery.appendChild(div);
-  });
-
-  // hide load more kalau foto habis
-  loadMore.style.display =
-    visible >= filtered.length ? 'none' : 'block';
-}
-
-
-tabs.forEach(btn => {
-  btn.onclick = () => {
-    tabs.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    currentAlbum = btn.dataset.album;
-    visible = 8; // RESET JUMLAH FOTO
-    render();
-  };
-});
-
 
 function render() {
   gallery.innerHTML = '';
@@ -80,14 +48,19 @@ function render() {
     gallery.appendChild(div);
   });
 
-  // 🔥 AUTO HIDE LOAD MORE
-  const loadMoreBtn = document.getElementById('loadMore');
-  if (visible >= filtered.length) {
-    loadMoreBtn.style.display = 'none';
-  } else {
-    loadMoreBtn.style.display = 'block';
-  }
+  loadMoreBtn.style.display =
+    visible >= filtered.length ? 'none' : 'block';
 }
+
+tabs.forEach(btn => {
+  btn.onclick = () => {
+    tabs.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentAlbum = btn.dataset.album;
+    visible = 8;
+    render();
+  };
+});
 
 loadMoreBtn.onclick = () => {
   loadMoreBtn.textContent = 'LOADING...';
@@ -97,3 +70,7 @@ loadMoreBtn.onclick = () => {
     loadMoreBtn.textContent = 'LOAD MORE';
   }, 300);
 };
+
+render();
+
+}
